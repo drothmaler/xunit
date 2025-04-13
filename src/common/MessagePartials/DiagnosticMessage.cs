@@ -38,7 +38,7 @@ sealed partial class DiagnosticMessage : MessageSinkMessage, IDiagnosticMessage
 	/// <param name="arg0">The value to replace {0} in the format string.</param>
 	[SetsRequiredMembers]
 	public DiagnosticMessage(
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		object? arg0) =>
 			Message = string.Format(CultureInfo.CurrentCulture, Guard.ArgumentNotNull(messageFormat), arg0);
 
@@ -51,7 +51,7 @@ sealed partial class DiagnosticMessage : MessageSinkMessage, IDiagnosticMessage
 	/// <param name="arg1">The value to replace {1} in the format string.</param>
 	[SetsRequiredMembers]
 	public DiagnosticMessage(
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		object? arg0,
 		object? arg1) =>
 			Message = string.Format(CultureInfo.CurrentCulture, Guard.ArgumentNotNull(messageFormat), arg0, arg1);
@@ -66,7 +66,7 @@ sealed partial class DiagnosticMessage : MessageSinkMessage, IDiagnosticMessage
 	/// <param name="arg2">The value to replace {2} in the format string.</param>
 	[SetsRequiredMembers]
 	public DiagnosticMessage(
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		object? arg0,
 		object? arg1,
 		object? arg2) =>
@@ -80,7 +80,7 @@ sealed partial class DiagnosticMessage : MessageSinkMessage, IDiagnosticMessage
 	/// <param name="args">An object array that contains zero or more objects to format.</param>
 	[SetsRequiredMembers]
 	public DiagnosticMessage(
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args) =>
 			Message = string.Format(CultureInfo.CurrentCulture, Guard.ArgumentNotNull(messageFormat), args);
 

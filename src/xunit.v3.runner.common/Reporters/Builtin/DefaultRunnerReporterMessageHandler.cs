@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -178,7 +179,7 @@ public class DefaultRunnerReporterMessageHandler : TestMessageSink, IRunnerRepor
 	/// <param name="args">The arguments to format <paramref name="failureTypeFormat"/> with</param>
 	protected void LogError(
 		IErrorMetadata errorMetadata,
-		string failureTypeFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string failureTypeFormat,
 		params object?[] args) =>
 			LogError(errorMetadata, string.Format(CultureInfo.CurrentCulture, failureTypeFormat, args));
 

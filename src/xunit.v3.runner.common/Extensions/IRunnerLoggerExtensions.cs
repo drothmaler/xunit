@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using Xunit.Internal;
 
@@ -31,7 +32,7 @@ public static class IRunnerLoggerExtensions
 	/// <param name="args">The format arguments</param>
 	public static void LogMessage(
 		this IRunnerLogger logger,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -50,7 +51,7 @@ public static class IRunnerLoggerExtensions
 	public static void LogMessage(
 		this IRunnerLogger logger,
 		StackFrameInfo stackFrame,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -82,7 +83,7 @@ public static class IRunnerLoggerExtensions
 	/// <param name="args">The format arguments</param>
 	public static void LogImportantMessage(
 		this IRunnerLogger logger,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -101,7 +102,7 @@ public static class IRunnerLoggerExtensions
 	public static void LogImportantMessage(
 		this IRunnerLogger logger,
 		StackFrameInfo stackFrame,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -133,7 +134,7 @@ public static class IRunnerLoggerExtensions
 	/// <param name="args">The format arguments</param>
 	public static void LogWarning(
 		this IRunnerLogger logger,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -152,7 +153,7 @@ public static class IRunnerLoggerExtensions
 	public static void LogWarning(
 		this IRunnerLogger logger,
 		StackFrameInfo stackFrame,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -184,7 +185,7 @@ public static class IRunnerLoggerExtensions
 	/// <param name="args">The format arguments</param>
 	public static void LogError(
 		this IRunnerLogger logger,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -203,7 +204,7 @@ public static class IRunnerLoggerExtensions
 	public static void LogError(
 		this IRunnerLogger logger,
 		StackFrameInfo stackFrame,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);
@@ -222,7 +223,7 @@ public static class IRunnerLoggerExtensions
 	/// <param name="args">The format arguments</param>
 	public static void LogRaw(
 		this IRunnerLogger logger,
-		string messageFormat,
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string messageFormat,
 		params object?[] args)
 	{
 		Guard.ArgumentNotNull(logger);

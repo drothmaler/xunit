@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -65,8 +66,8 @@ public class TestOutputHelper : ITestOutputHelper
 
 	/// <inheritdoc/>
 	public void Write(
-		string format,
-		params object[] args)
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format,
+		params object?[] args)
 	{
 		Guard.ArgumentNotNull(format);
 		Guard.ArgumentNotNull(args);
@@ -84,8 +85,8 @@ public class TestOutputHelper : ITestOutputHelper
 
 	/// <inheritdoc/>
 	public void WriteLine(
-		string format,
-		params object[] args)
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format,
+		params object?[] args)
 	{
 		Guard.ArgumentNotNull(format);
 		Guard.ArgumentNotNull(args);

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Xunit;
 
@@ -28,8 +29,8 @@ public interface ITestOutputHelper
 	/// <param name="format">The message format</param>
 	/// <param name="args">The format arguments</param>
 	void Write(
-		string format,
-		params object[] args);
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format,
+		params object?[] args);
 
 	/// <summary>
 	/// Adds text to the output, followed by <see cref="Environment.NewLine"/>.
@@ -43,6 +44,6 @@ public interface ITestOutputHelper
 	/// <param name="format">The message format</param>
 	/// <param name="args">The format arguments</param>
 	void WriteLine(
-		string format,
-		params object[] args);
+		[StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format,
+		params object?[] args);
 }
